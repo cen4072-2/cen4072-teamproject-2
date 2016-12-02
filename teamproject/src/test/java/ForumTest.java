@@ -24,7 +24,7 @@ public class ForumTest {
     @BeforeClass
     public static void oneTimeSetup(){
         //Set your path to the geckodriver application
-        System.setProperty("webdriver.gecko.driver","C:\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/geckodriver.exe");
         driver = new FirefoxDriver();
         loginpage = new LoginPage(driver);
         loginpage.open();
