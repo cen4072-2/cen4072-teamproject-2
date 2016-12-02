@@ -1,5 +1,6 @@
 package test.java;
 
+import main.java.pages.Browse;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -14,9 +15,6 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import main.java.pages.Browse;
-
 /**
  * Created by Winicius on 11/6/2016.
  */
@@ -30,7 +28,6 @@ public class BrowseTests {
         // Create a new instance of the Firefox driver
         // Notice that the remainder of the code relies on the interface,
         // not the implementation.
-        System.out.println(System.getProperty("user.dir"));
         System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/geckodriver.exe");
         driver = new FirefoxDriver();
     }

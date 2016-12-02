@@ -1,0 +1,43 @@
+package test.java.cen4072.models;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class SignInPage {
+  private final String URL = "http://bdonline.sqe.com/login.asp";
+  private final String username = "cen4072-1";
+  private final String password = "password";
+
+  private WebDriver driver;
+
+  public SignInPage(WebDriver driver) {
+    this.driver = driver;
+  }
+
+  public SignInPage open() {
+    driver.get(URL);
+    return this;
+  }
+
+  public void signinDefaultCredentials() {
+    signin(username, password);
+  }
+
+  public void signin(String username, String password) {
+    WebElement userNameTextField = driver.findElement(By.name("login"));
+    WebElement passwordTextField = driver.findElement(By.name("password"));
+    WebElement submitButton = driver.findElement(By.cssSelector("input[type=\"image\"]"));
+
+    userNameTextField.clear();
+    userNameTextField.sendKeys(username);
+
+    passwordTextField.clear();
+    passwordTextField.sendKeys(password);
+
+    submitButton.click();
+  }
+}
+/Users/dylantadros/Desktop/geckodriver
+/Users/dylantadros/Desktop/geckodriver/
+///

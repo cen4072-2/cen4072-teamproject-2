@@ -1,5 +1,4 @@
 package test.java;
-
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -7,7 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import main.java.pages.*;
+import main.java.pages.ForumPage;
+import main.java.pages.LoginPage;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -73,21 +73,13 @@ public class ForumTest {
 
     @Test
     public void createThread_GoodTopicGoodContent_ThreadCreated(){
-        String topic = "Hello world!";
-        String content = "Hello all";
+        String topic = "Hello wrld!";
+        String content = "Hello al";
         fp.createThread(topic, content);
 
         List errors = driver.findElements(By.className("form_error"));
 
         Assert.assertEquals(0, errors.size());
     }
-
-    @Test
-    public void UsernameAndPasswordExist_LogsUserIn(){
-        loginpage = loginpage.defaultSignin();
-        WebElement x = driver.findElement(By.id("oh-menu-deviant"));
-        assertEquals("cen4072-2",x.getText());
-    }
-
 
 }

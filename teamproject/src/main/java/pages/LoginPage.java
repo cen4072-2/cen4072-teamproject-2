@@ -1,4 +1,5 @@
 package main.java.pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,8 @@ public class LoginPage {
     private WebDriver driver;
     private String username = "cen4072.2@gmail.com";
     private String password = "blackbox24";
+
+
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
