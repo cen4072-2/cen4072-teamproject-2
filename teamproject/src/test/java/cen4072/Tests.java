@@ -14,6 +14,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import test.java.cen4072.models.*;
 
+import java.util.concurrent.TimeUnit;
+
 @RunWith(JUnit4.class)
 public class Tests {
 
@@ -1774,7 +1776,7 @@ public class Tests {
     }
 
     @Before
-    public void setup(){
+    public void setup()throws InterruptedException{
         new SignInPage(driver)
                 .open()
                 .signinDefaultCredentials();
@@ -1800,7 +1802,6 @@ public class Tests {
         new PostPage(driver)
                 .enterComment("This is a valid comment")
                 .clickSubmitCommentButton();
-
         WebElement result = driver.findElement(By.cssSelector("div.dev-page-below-tabs > #gmi-CCommentMaster > #gmi-CCommentThread > #gmi-CComment > div.ch-ctrl > div.ctext.ch > div.ch-ctrl.cc-in > div.text.text-ii"));
 
         Assert.assertEquals("This is a valid comment", result.getText());

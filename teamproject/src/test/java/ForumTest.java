@@ -73,12 +73,11 @@ public class ForumTest {
 
     @Test
     public void createThread_GoodTopicGoodContent_ThreadCreated(){
-        String topic = "Hello wrld!";
-        String content = "Hello al";
+        String topic = "Hello world!";
+        String content = "Hello all";
         fp.createThread(topic, content);
 
         List errors = driver.findElements(By.className("form_error"));
-
         Assert.assertEquals(0, errors.size());
     }
 
